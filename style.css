@@ -28,11 +28,41 @@
   background-color: black;
   z-index: 10;
 }
-.dropdown-menu:hover,
-.dropdown-menu:active,
-.dropdown-menu:focus {
-  background-color: black;
+#cosmo:hover,
+#cosmo:active,
+#cosmo:focus {
   color: goldenrod;
+  cursor: pointer;
+}
+#makeup:hover,
+#makeup:active,
+#makeup:focus {
+  color: goldenrod;
+  cursor: pointer;
+}
+#eyes:hover,
+#eyes:active,
+#eyes:focus {
+  color: goldenrod;
+  cursor: pointer;
+}
+#frau:hover,
+#frau:active,
+#frau:focus {
+  color: goldenrod;
+  cursor: pointer;
+}
+#man:hover,
+#man:active,
+#man:focus {
+  color: goldenrod;
+  cursor: pointer;
+}
+#kind:hover,
+#kind:active,
+#kind:focus {
+  color: goldenrod;
+  cursor: pointer;
 }
 
 /* .dropdown-menu,
