@@ -1,0 +1,17 @@
+{
+  "beautyExtras": [
+    {
+      "description": "Beauty Extras",
+      "aquapeeling": "Aquapeeling",
+      "aquapeelingPreis": "40.00 €",
+      "microneedling": "Microneedling",
+      "microneedlingPreis": "70.00 €",
+      "radiofrequenz": "Rdiofrequenz",
+      "radiofrequenzPreis": "20.00 €",
+      "ionenlifting": "Ionenlifting",
+      "ionenliftingPreis": "20.00 €",
+      "ultraschall": "Ultraschall",
+      "ultraschallPreis": "20.00 €"
+    }
+  ]
+}

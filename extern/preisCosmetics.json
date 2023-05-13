@@ -1,0 +1,36 @@
+{
+  "text": [
+    {
+      "product": "Erstellen Sie ganz einfach ihre individuelle, auf Ihre Haut abgestimmte, Kosmetikbehandlung. Wählen Sie aus zwei Basisbehandlungen und buchen Sie sich ein paar Beauty Extra dazu !"
+    }
+  ],
+  "behandlungEins": [
+    {
+      "name": "Behandlung 1:",
+      "description": "manuelle Reinigung, Peeling, Tonic, gründlich Ausreinigen, HF, Augenbrauen Korrektur, Maske, Augenmassage, Abschlusspflege",
+      "preis": "60 MIn.  55.00 €"
+    }
+  ],
+  "behandlungZwei": [
+    {
+      "name": "Behandlung 2:",
+      "description": "manuelle Reinigung, Peeling, Tonic, gründlich Ausreinigen, HF, Augenbrauen Korrektur, Maske, Gesicht-, Hals- und Dekolletemassage, Augenmassage, Abschlusspflege",
+      "preis": "90 Min.  80.00 €"
+    }
+  ],
+  "beautyExtras": [
+    {
+      "description": "Beauty Extras",
+      "aquapeeling": "Aquapeeling",
+      "aquapeelingPreis": "40.00 €",
+      "microneedling": "Microneedling",
+      "microneedlingPreis": "70.00 €",
+      "radiofrequenz": "Rdiofrequenz",
+      "radiofrequenzPreis": "20.00 €",
+      "ionenlifting": "Ionenlifting",
+      "ionenliftingPreis": "20.00 €",
+      "ultraschall": "Ultraschall",
+      "ultraschallPreis": "20.00 €"
+    }
+  ]
+}

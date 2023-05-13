@@ -1,0 +1,18 @@
+[
+  {
+    "geschlecht": "Jung Ladies",
+    "alter": "0-6 Jahre",
+    "preis": "19.50 €",
+    "alter2": "7-14 Jahre",
+    "preis2": "29.00 €",
+    "sonnst": "ab 15 Jahre Ladies"
+  },
+  {
+    "geschlecht": "Jung Gents",
+    "alter": "0-6 Jahre",
+    "preis": "15.00 €",
+    "alter2": "7-14 Jahre",
+    "preis2": "19.50 €",
+    "sonnst": "ab 15 Jahre Gentelmen"
+  }
+]

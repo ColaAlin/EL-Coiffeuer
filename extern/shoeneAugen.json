@@ -1,0 +1,17 @@
+{
+  "shoeneAugen": [
+    {
+      "description": "Schöne Augen",
+      "brow": "Brow lifting inkl. färben und Korrektur",
+      "browPreis": "45.00 €",
+      "lash": "Lash lifting inkl. färben",
+      "lashPreis": "45.00 €",
+      "wimpern": "Wimpern färben",
+      "wimpernPreis": "15.00 €",
+      "augen": "Augenbrauen färben",
+      "augenPreis": "10.00 €",
+      "augenKorrektur": "Augenbrauenkorrektur",
+      "augenKorrekturPreis": "10.00 €"
+    }
+  ]
+}

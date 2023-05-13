@@ -1,0 +1,32 @@
+[
+  {
+    "hair": "waschen, schneiden, föhnen",
+    "preis": "27.00 €"
+  },
+
+  {
+    "hair": "Trokenhaarschnitt",
+    "preis": "24.50 €"
+  },
+
+  {
+    "hair": "Dauerwelle",
+    "preis": "50.00 €"
+  },
+  {
+    "hair": "Bart Kompletpflege",
+    "preis": "20.00 €"
+  },
+  {
+    "hair": "Bart färben",
+    "preis": "10.00 €"
+  },
+  {
+    "hair": "Augenbrauen zupfen",
+    "preis": "10.00 €"
+  },
+  {
+    "hair": "Gesichtmaske",
+    "preis": "10.00 €"
+  }
+]
