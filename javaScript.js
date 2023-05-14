@@ -78,14 +78,7 @@ window.addEventListener("click", function (e) {
     closeDropdown();
   }
 });
-// Listen to the doc touch
-window.addEventListener("touchstart", function (e) {
-  // Close the menu if click happen outside menu
-  if (e.target.closest(".dropdown-container") === null) {
-    // Close the opened dropdown
-    closeDropdown();
-  }
-});
+
 
 // Close the opened Dropdowns
 function closeDropdown() {
