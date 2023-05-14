@@ -25,6 +25,30 @@ function dropDownFunc(dropDown) {
       }
     });
   }
+//////////////////////////////////////
+
+  if (dropDown.classList.contains("click-dropdown") === true) {
+    dropDown.addEventListener("touchstart", function (e) {
+      e.preventDefault();
+
+      if (
+        this.nextElementSibling.classList.contains("dropdown-active") === true
+      ) {
+        // Close the clicked dropdown
+        this.parentElement.classList.remove("dropdown-open");
+        this.nextElementSibling.classList.remove("dropdown-active");
+      } else {
+        // Close the opened dropdown
+        closeDropdown();
+
+        // add the open and active class(Opening the DropDown)
+        this.parentElement.classList.add("dropdown-open");
+        this.nextElementSibling.classList.add("dropdown-active");
+      }
+    });
+  }
+
+//////////////////////////////////////
 
   if (dropDown.classList.contains("hover-dropdown") === true) {
     dropDown.onmouseover = dropDown.onmouseout = dropdownHover;
@@ -49,6 +73,14 @@ function dropDownFunc(dropDown) {
 
 // Listen to the doc click
 window.addEventListener("click", function (e) {
+  // Close the menu if click happen outside menu
+  if (e.target.closest(".dropdown-container") === null) {
+    // Close the opened dropdown
+    closeDropdown();
+  }
+});
+// Listen to the doc touch
+window.addEventListener("touchstart", function (e) {
   // Close the menu if click happen outside menu
   if (e.target.closest(".dropdown-container") === null) {
     // Close the opened dropdown
