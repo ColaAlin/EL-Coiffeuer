@@ -6,6 +6,7 @@ function dropDownFunc(dropDown) {
   console.log(dropDown.classList.contains("click-dropdown"));
 
   if (dropDown.classList.contains("click-dropdown") === true) {
+    // Add click event listener
     dropDown.addEventListener("click", function (e) {
       e.preventDefault();
 
@@ -19,34 +20,13 @@ function dropDownFunc(dropDown) {
         // Close the opened dropdown
         closeDropdown();
 
-        // add the open and active class(Opening the DropDown)
+        // Add the open and active class (Opening the DropDown)
         this.parentElement.classList.add("dropdown-open");
         this.nextElementSibling.classList.add("dropdown-active");
       }
     });
-  }
 
-  if (dropDown.classList.contains("hover-dropdown") === true) {
-    dropDown.onmouseover = dropDown.onmouseout = dropdownHover;
-
-    function dropdownHover(e) {
-      if (e.type == "mouseover") {
-        // Close the opened dropdown
-        closeDropdown();
-
-        // add the open and active class(Opening the DropDown)
-        this.parentElement.classList.add("dropdown-open");
-        this.nextElementSibling.classList.add("dropdown-active");
-      }
-
-      // if(e.type == 'mouseout'){
-      //     // close the dropdown after user leave the list
-      //     e.target.nextElementSibling.onmouseleave = closeDropdown;
-      // }
-    }
-  }
-  if (dropDown.classList.contains("click-dropdown") === true) {
-    // add touchstart event listener
+    // Add touchstart event listener
     dropDown.addEventListener("touchstart", function (e) {
       e.preventDefault();
 
@@ -60,45 +40,60 @@ function dropDownFunc(dropDown) {
         // Close the opened dropdown
         closeDropdown();
 
-        // add the open and active class(Opening the DropDown)
+        // Add the open and active class (Opening the DropDown)
         this.parentElement.classList.add("dropdown-open");
         this.nextElementSibling.classList.add("dropdown-active");
       }
     });
   }
+
+  if (dropDown.classList.contains("hover-dropdown") === true) {
+    // Add mouseover and mouseout event listeners
+    dropDown.addEventListener("mouseover", dropdownHover);
+    dropDown.addEventListener("mouseout", dropdownHover);
+
+    function dropdownHover(e) {
+      if (e.type === "mouseover") {
+        // Close the opened dropdown
+        closeDropdown();
+
+        // Add the open and active class (Opening the DropDown)
+        this.parentElement.classList.add("dropdown-open");
+        this.nextElementSibling.classList.add("dropdown-active");
+      }
+    }
+  }
 }
 
-// Listen to the doc click
+// Listen to the document click
 window.addEventListener("click", function (e) {
-  // Close the menu if click happen outside menu
+  // Close the menu if click happens outside menu
   if (e.target.closest(".dropdown-container") === null) {
     // Close the opened dropdown
     closeDropdown();
   }
 });
 
-
 // Close the opened Dropdowns
 function closeDropdown() {
   console.log("run");
 
-  // remove the open and active class from other opened Dropdown (Closing the opened DropDown)
-  document
-    .querySelectorAll(".dropdown-container")
-    .forEach(function (container) {
-      container.classList.remove("dropdown-open");
-    });
+  // Remove the open and active class from other opened Dropdown (Closing the opened DropDown)
+  document.querySelectorAll(".dropdown-container").forEach(function (container) {
+    container.classList.remove("dropdown-open");
+  });
 
   document.querySelectorAll(".dropdown-menu").forEach(function (menu) {
     menu.classList.remove("dropdown-active");
   });
 }
 
-// close the dropdown on mouse out from the dropdown list
+// Close the dropdown on mouseout from the dropdown list
 document.querySelectorAll(".dropdown-menu").forEach(function (dropDownList) {
-  // close the dropdown after user leave the list
-  dropDownList.onmouseleave = closeDropdown;
+  // Close the dropdown after the user leaves the list
+  dropDownList.addEventListener("mouseleave", closeDropdown);
 });
+
 
 const url = "extern/preisMen.json";
 
