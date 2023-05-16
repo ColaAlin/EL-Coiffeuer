@@ -6,7 +6,7 @@ function dropDownFunc(dropDown) {
   console.log(dropDown.classList.contains("click-dropdown"));
 
   if (dropDown.classList.contains("click-dropdown") === true) {
-    dropDown.addEventListener("touchstart", function (e) {
+    dropDown.addEventListener("click", function (e) {
       e.preventDefault();
 
       if (
