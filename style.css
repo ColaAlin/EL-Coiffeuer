@@ -1,9 +1,11 @@
- /* @media (max-width: 767px) {
-  .dropdown-toggle {
+  @media (min-width: 767px) {
+  .dropdown-menu {
     cursor: pointer;
-    /* Add any necessary touch-specific styles here 
+    display: none;
+    background-color: red;
+    /* Add any necessary touch-specific styles here */
   }
-}  */
+}  
 
 
 .dropdown-container {
@@ -32,7 +34,7 @@
   color: white;
   -webkit-box-shadow: 17px 7px 15px -6px #daa520;
   box-shadow: 10px 10px 15px 3px #daa520;
-  display: none;
+  _display: none;
   background-color: black;
   z-index: 10;
 }
