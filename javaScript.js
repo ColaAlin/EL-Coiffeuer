@@ -1,6 +1,22 @@
 // Get all the dropdown from document
 document.querySelectorAll(".dropdown-toggle").forEach(dropDownFunc);
-document.querySelectorAll(".touch-dropdown").forEach(touchDownFunc);
+//document.querySelectorAll(".touch-dropdown").forEach(touchDownFunc);
+document.getElementById("down").ontouchstart = function(eve) {
+  console.log("Touch Down");
+  eve.preventDefault();
+  if (this.nextElementSibling.classList.contains("touch-active") === true) {
+    
+    this.parentElement.classList.remove("touch-open");
+    this.nextElementSibling.classList.remove("touch-active");
+  } else {
+    
+    closeDropdown();
+
+    
+    this.parentElement.classList.add("touch-open");
+    this.nextElementSibling.classList.add("touch-active");
+  }
+};
 
 
 // Dropdown Open and Close function
@@ -30,13 +46,16 @@ function dropDownFunc(dropDown) {
   }
 }
 
-function touchDownFunc(touchDown) {
-  console.log(touchDown.classList.contains("touch-dropdown"));
+// function touchDownFunc(touchDown) {
+//   console.log(touchDown.classList.contains("touch-dropdown"));
 
-  if(touchDown.classList.contains("touch-dropdown") === true) {
-    touchDown.addEventListener("touchstart", handleTouchStart);
-  }
-}
+
+
+//   if(touchDown.classList.contains("touch-dropdown") === true) {
+//     touchDown.addEventListener("touchstart", handleTouchStart);
+//   }
+  
+// }
 
 // Handle dropdown click event
 function handleDropdown(e) {
@@ -56,23 +75,23 @@ function handleDropdown(e) {
   }
 }
 
-// Handle touchstart event
-function handleTouchStart(e) {
-  console.log("Fuck yeah!")
-  e.preventDefault();
-  if (this.nextElementSibling.classList.contains("touch-active") === true) {
+// // Handle touchstart event
+// function handleTouchStart(event) {
+//   console.log("touch");
+//   event.preventDefault();
+//   if (this.nextElementSibling.classList.contains("touch-active") === true) {
     
-    this.parentElement.classList.remove("touch-open");
-    this.nextElementSibling.classList.remove("touch-active");
-  } else {
+//     this.parentElement.classList.remove("touch-open");
+//     this.nextElementSibling.classList.remove("touch-active");
+//   } else {
     
-    closeDropdown();
+//     closeDropdown();
 
     
-    this.parentElement.classList.add("touch-open");
-    this.nextElementSibling.classList.add("touch-active");
-  }
-}
+//     this.parentElement.classList.add("touch-open");
+//     this.nextElementSibling.classList.add("touch-active");
+//   }
+// }
 
 // Listen to the document click
 window.addEventListener("click", function (e) {
