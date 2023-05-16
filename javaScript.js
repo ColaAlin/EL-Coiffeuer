@@ -8,7 +8,7 @@ function dropDownFunc(dropDown) {
   if (dropDown.classList.contains("click-dropdown") === true) {
     // Add click and touchstart event listeners
     dropDown.addEventListener("click", handleDropdown);
-    dropDown.addEventListener("touchstart", handleDropdown);
+    dropDown.addEventListener("touchstart", handleTouchStart);
   }
 
   if (dropDown.classList.contains("hover-dropdown") === true) {
@@ -29,7 +29,7 @@ function dropDownFunc(dropDown) {
   }
 }
 
-// Handle dropdown event (click and touchstart)
+// Handle dropdown click event
 function handleDropdown(e) {
   e.preventDefault();
 
@@ -38,6 +38,21 @@ function handleDropdown(e) {
     this.parentElement.classList.remove("dropdown-open");
     this.nextElementSibling.classList.remove("dropdown-active");
   } else {
+    // Close the opened dropdown
+    closeDropdown();
+
+    // Add the open and active class (Opening the DropDown)
+    this.parentElement.classList.add("dropdown-open");
+    this.nextElementSibling.classList.add("dropdown-active");
+  }
+}
+
+// Handle touchstart event
+function handleTouchStart(e) {
+  e.preventDefault();
+
+  // Check if the touch event is triggered by a single touch
+  if (e.touches.length === 1) {
     // Close the opened dropdown
     closeDropdown();
 
@@ -75,6 +90,7 @@ document.querySelectorAll(".dropdown-menu").forEach(function (dropDownList) {
   // Close the dropdown after the user leaves the list
   dropDownList.addEventListener("mouseleave", closeDropdown);
 });
+
 
 
 
