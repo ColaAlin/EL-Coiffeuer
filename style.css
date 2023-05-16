@@ -1,3 +1,11 @@
+/* @media (max-width: 767px) {
+  .dropdown-toggle {
+    cursor: pointer;
+    /* Add any necessary touch-specific styles here 
+  }
+} */
+
+
 .dropdown-container {
   border: none;
   margin-top: -73px;
@@ -98,6 +106,12 @@
 
 .dropdown-open {
   .dropdown-menu.dropdown-active {
+    display: block;
+  }
+}
+
+.touch-open {
+  .dropdown-menu.touch-active {
     display: block;
   }
 }

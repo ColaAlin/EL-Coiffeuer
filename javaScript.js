@@ -1,14 +1,15 @@
 // Get all the dropdown from document
 document.querySelectorAll(".dropdown-toggle").forEach(dropDownFunc);
+document.querySelectorAll(".touch-dropdown").forEach(touchDownFunc);
+
 
 // Dropdown Open and Close function
 function dropDownFunc(dropDown) {
   console.log(dropDown.classList.contains("click-dropdown"));
 
   if (dropDown.classList.contains("click-dropdown") === true) {
-    // Add click and touchstart event listeners
+    // Add click event listener
     dropDown.addEventListener("click", handleDropdown);
-    dropDown.addEventListener("touchstart", handleTouchStart);
   }
 
   if (dropDown.classList.contains("hover-dropdown") === true) {
@@ -26,6 +27,14 @@ function dropDownFunc(dropDown) {
         this.nextElementSibling.classList.add("dropdown-active");
       }
     }
+  }
+}
+
+function touchDownFunc(touchDown) {
+  console.log(touchDown.classList.contains("touch-dropdown"));
+
+  if(touchDown.classList.contains("touch-dropdown") === true) {
+    touchDown.addEventListener("touchstart", handleTouchStart);
   }
 }
 
@@ -49,16 +58,19 @@ function handleDropdown(e) {
 
 // Handle touchstart event
 function handleTouchStart(e) {
+  console.log("Fuck yeah!")
   e.preventDefault();
-
-  // Check if the touch event is triggered by a single touch
-  if (e.touches.length === 1) {
-    // Close the opened dropdown
+  if (this.nextElementSibling.classList.contains("touch-active") === true) {
+    
+    this.parentElement.classList.remove("touch-open");
+    this.nextElementSibling.classList.remove("touch-active");
+  } else {
+    
     closeDropdown();
 
-    // Add the open and active class (Opening the DropDown)
-    this.parentElement.classList.add("dropdown-open");
-    this.nextElementSibling.classList.add("dropdown-active");
+    
+    this.parentElement.classList.add("touch-open");
+    this.nextElementSibling.classList.add("touch-active");
   }
 }
 
@@ -78,10 +90,12 @@ function closeDropdown() {
   // Remove the open and active class from other opened Dropdown (Closing the opened DropDown)
   document.querySelectorAll(".dropdown-container").forEach(function (container) {
     container.classList.remove("dropdown-open");
+    container.classList.remove("touch-open");
   });
 
   document.querySelectorAll(".dropdown-menu").forEach(function (menu) {
     menu.classList.remove("dropdown-active");
+    menu.classList.remove("touch-active");
   });
 }
 
