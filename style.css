@@ -34,9 +34,9 @@
   }
 }
 @media (max-width: 600px) {
-  body {
-    margin-right: 300px;
-    padding: 0;
+  .article {
+    padding-right: 20px;
+    margin-left: 0;
     background-color: white;
 
     /* Add any necessary touch-specific styles here */
