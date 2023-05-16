@@ -6,45 +6,9 @@ function dropDownFunc(dropDown) {
   console.log(dropDown.classList.contains("click-dropdown"));
 
   if (dropDown.classList.contains("click-dropdown") === true) {
-    // Add click event listener
-    dropDown.addEventListener("click", function (e) {
-      e.preventDefault();
-
-      if (
-        this.nextElementSibling.classList.contains("dropdown-active") === true
-      ) {
-        // Close the clicked dropdown
-        this.parentElement.classList.remove("dropdown-open");
-        this.nextElementSibling.classList.remove("dropdown-active");
-      } else {
-        // Close the opened dropdown
-        closeDropdown();
-
-        // Add the open and active class (Opening the DropDown)
-        this.parentElement.classList.add("dropdown-open");
-        this.nextElementSibling.classList.add("dropdown-active");
-      }
-    });
-
-    // Add touchstart event listener
-    dropDown.addEventListener("touchstart", function (e) {
-      e.preventDefault();
-
-      if (
-        this.nextElementSibling.classList.contains("dropdown-active") === true
-      ) {
-        // Close the clicked dropdown
-        this.parentElement.classList.remove("dropdown-open");
-        this.nextElementSibling.classList.remove("dropdown-active");
-      } else {
-        // Close the opened dropdown
-        closeDropdown();
-
-        // Add the open and active class (Opening the DropDown)
-        this.parentElement.classList.add("dropdown-open");
-        this.nextElementSibling.classList.add("dropdown-active");
-      }
-    });
+    // Add click and touchstart event listeners
+    dropDown.addEventListener("click", handleDropdown);
+    dropDown.addEventListener("touchstart", handleDropdown);
   }
 
   if (dropDown.classList.contains("hover-dropdown") === true) {
@@ -62,6 +26,24 @@ function dropDownFunc(dropDown) {
         this.nextElementSibling.classList.add("dropdown-active");
       }
     }
+  }
+}
+
+// Handle dropdown event (click and touchstart)
+function handleDropdown(e) {
+  e.preventDefault();
+
+  if (this.nextElementSibling.classList.contains("dropdown-active") === true) {
+    // Close the clicked dropdown
+    this.parentElement.classList.remove("dropdown-open");
+    this.nextElementSibling.classList.remove("dropdown-active");
+  } else {
+    // Close the opened dropdown
+    closeDropdown();
+
+    // Add the open and active class (Opening the DropDown)
+    this.parentElement.classList.add("dropdown-open");
+    this.nextElementSibling.classList.add("dropdown-active");
   }
 }
 
@@ -93,6 +75,7 @@ document.querySelectorAll(".dropdown-menu").forEach(function (dropDownList) {
   // Close the dropdown after the user leaves the list
   dropDownList.addEventListener("mouseleave", closeDropdown);
 });
+
 
 
 const url = "extern/preisMen.json";
