@@ -1,59 +1,25 @@
 // Get all the dropdown from document
-//document.querySelectorAll(".dropdown-toggle").forEach(dropDownFunc);
-document.querySelectorAll(".touch-dropdown").forEach(touchDownFunc);
-
-const isTouchDevice = "ontouchstart" in window || navigator.msMaxTouchPoints;
-
-// Get all the dropdown from document
 document.querySelectorAll(".dropdown-toggle").forEach(dropDownFunc);
+//document.querySelectorAll(".touch-dropdown").forEach(touchDownFunc);
 
 // Dropdown Open and Close function
 function dropDownFunc(dropDown) {
-  if (isTouchDevice) {
-    console.log("touch");
-    // Add touchstart event listener for touch devices
-    dropDown.addEventListener("touchstart", touchDownFunc);
-  } else {
-    // Add click event listener for PC devices
-    console.log("click");
-    dropDown.addEventListener("click", handleDropdown);
+  console.log(dropDown.classList.contains("click-dropdown"));
+
+  if (dropDown.classList.contains("click-dropdown") === true) {
+    // Add click event listener
+    dropDown.addEventListener("pointerdown", handleDropdown);
   }
-
-  // Rest of your code...
+  // if (dropDown.classList.contains("touch-dropdown") === true) {
+  //   // Add click event listener
+  //   dropDown.addEventListener("pointerdown", handleTouchStart);
+  // }
 }
-
-/////////////////////////////////
-// Dropdown Open and Close function
-// function dropDownFunc(dropDown) {
-//   console.log(dropDown.classList.contains("click-dropdown"));
-
-//   if (dropDown.classList.contains("click-dropdown") === true) {
-//     // Add click event listener
-//     dropDown.addEventListener("click", handleDropdown);
-//   }
-// ////////////////////////////////////////////////
-//   // if (dropDown.classList.contains("hover-dropdown") === true) {
-//   //   // Add mouseover and mouseout event listeners
-//   //   dropDown.addEventListener("mouseover", dropdownHover);
-//   //   dropDown.addEventListener("mouseout", dropdownHover);
-
-//   //   function dropdownHover(e) {
-//   //     if (e.type === "mouseover") {
-//   //       // Close the opened dropdown
-//   //       closeDropdown();
-
-//   //       // Add the open and active class (Opening the DropDown)
-//   //       this.parentElement.classList.add("dropdown-open");
-//   //       this.nextElementSibling.classList.add("dropdown-active");
-//   //     }
-//   //   }
-//   // }
-// }
 
 // Handle dropdown click event
 function handleDropdown(e) {
-  e.preventDefault();
-
+  //e.preventDefault();
+  console.log(e);
   if (this.nextElementSibling.classList.contains("dropdown-active") === true) {
     // Close the clicked dropdown
     this.parentElement.classList.remove("dropdown-open");
@@ -72,12 +38,11 @@ function touchDownFunc(touchDown) {
   console.log(touchDown.classList.contains("touch-dropdown"));
 
   if (touchDown.classList.contains("touch-dropdown") === true) {
-    touchDown.addEventListener("touchstart", handleTouchStart);
+    touchDown.addEventListener("pointerdown", handleTouchStart);
   }
 }
 // Handle touchstart event
 function handleTouchStart(event) {
-  console.log("touch");
   event.preventDefault();
   if (this.nextElementSibling.classList.contains("touch-active") === true) {
     this.parentElement.classList.remove("touch-open");
@@ -91,7 +56,7 @@ function handleTouchStart(event) {
 }
 
 // Listen to the document click
-window.addEventListener("click", function (e) {
+window.addEventListener("pointerdown", function (e) {
   // Close the menu if click happens outside menu
   if (e.target.closest(".dropdown-container") === null) {
     // Close the opened dropdown
@@ -114,17 +79,15 @@ function closeDropdown() {
     menu.classList.remove("touch-active");
   });
   const home = document.querySelector("#content");
-  document.querySelector(".liste").addEventListener("click", () => {
+  document.querySelector(".liste").addEventListener("pointerdown", () => {
     while (home.hasChildNodes()) {
       home.removeChild(home.firstChild);
     }
   });
 }
 
-// Close the dropdown on mouseout from the dropdown list
 document.querySelectorAll(".dropdown-menu").forEach(function (dropDownList) {
-  // Close the dropdown after the user leaves the list
-  dropDownList.addEventListener("click", closeDropdown);
+  dropDownList.addEventListener("pointerup", closeDropdown);
 });
 
 const url = "extern/preisMen.json";
@@ -487,3 +450,36 @@ function appendDataEyes(data) {
     }
   });
 }
+
+//document.getElementById("btn").addEventListener("click", currentTime);
+
+// function handleEvent(event) {
+//   if (event instanceof TouchEvent && event.type === "touchstart") {
+//     // Touch event
+//     console.log("Touch event occurred.");
+//   } else if (event.type === "click") {
+//     // Click event
+//     console.log("Click event occurred.");
+//   }
+// }
+
+// // Add event listener to the element
+// const element = document.querySelector(".dropdown-container");
+// element.addEventListener("touchstart", handleEvent);
+// element.addEventListener("click", handleEvent);
+
+// function appendInsta(data) {
+//   console.log(data);
+//   document.querySelector("section").innerHTML = JSON.stringify(data);
+// }
+
+// fetch("https://www.instagram.com/el_coiffeure_cosmetics/")
+//   .then(function (response) {
+//     return response.json();
+//   })
+//   .then(function (data) {
+//     appendInsta(data);
+//   })
+//   .catch(function (error) {
+//     console.log("error: " + error);
+//   });
