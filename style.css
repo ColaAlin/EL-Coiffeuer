@@ -1,3 +1,96 @@
+/* ----------------------------------- */
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.headline {
+  position: relative;
+}
+.head {
+  height: 350px;
+  width: 100%;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  min-height: 150px;
+  color: white;
+  font-size: 15px;
+}
+
+.link {
+  color: white;
+  text-decoration: none;
+}
+
+.liste {
+  color: black;
+  background-color: white;
+  display: flex;
+  flex-direction: column-reverse;
+  align-content: center;
+  margin-top: 0px;
+  padding-left: 50px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+li {
+  text-decoration: none;
+  list-style: none;
+  padding-right: 20px;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+.article {
+  padding-top: 50px;
+  padding-left: 30px;
+}
+
+#wraper {
+  display: grid;
+  grid-template: 1fr 1fr 1fr 1fr;
+}
+
+.out {
+  height: 400px;
+  width: 300px;
+}
+.chair {
+  height: 400px;
+  width: 300px;
+}
+.woman {
+  height: 400px;
+  width: 300px;
+}
+.womanTwo {
+  height: 400px;
+  width: 300px;
+}
+
+.nav {
+  text-decoration: none;
+  color: white;
+}
+
+.nav:hover {
+  color: goldenrod;
+}
+
 @media (min-width: 600px) {
   .dropdown-menu {
     cursor: pointer;
@@ -147,97 +240,4 @@
 .icon {
   display: flex;
   align-items: center;
-}
-
-/* ----------------------------------- */
-
-*,
-*::after,
-*::before {
-  box-sizing: border-box;
-}
-body {
-  margin: 0;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-.headline {
-  position: relative;
-}
-.head {
-  height: 350px;
-  width: 100%;
-}
-
-.footer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: black;
-  min-height: 150px;
-  color: white;
-  font-size: 15px;
-}
-
-.link {
-  color: white;
-  text-decoration: none;
-}
-
-.liste {
-  color: black;
-  background-color: white;
-  display: flex;
-  flex-direction: column-reverse;
-  align-content: center;
-  margin-top: 0px;
-  padding-left: 50px;
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-
-li {
-  text-decoration: none;
-  list-style: none;
-  padding-right: 20px;
-  padding-top: 20px;
-  padding-bottom: 10px;
-}
-
-.article {
-  padding-top: 50px;
-  padding-left: 30px;
-}
-
-#wraper {
-  display: grid;
-  grid-template: 1fr 1fr 1fr 1fr;
-}
-
-.out {
-  height: 400px;
-  width: 300px;
-}
-.chair {
-  height: 400px;
-  width: 300px;
-}
-.woman {
-  height: 400px;
-  width: 300px;
-}
-.womanTwo {
-  height: 400px;
-  width: 300px;
-}
-
-.nav {
-  text-decoration: none;
-  color: white;
-}
-
-.nav:hover {
-  color: goldenrod;
 }
