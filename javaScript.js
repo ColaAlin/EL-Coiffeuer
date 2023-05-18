@@ -1,6 +1,5 @@
 // Get all the dropdown from document
 document.querySelectorAll(".dropdown-toggle").forEach(dropDownFunc);
-//document.querySelectorAll(".touch-dropdown").forEach(touchDownFunc);
 
 // Dropdown Open and Close function
 function dropDownFunc(dropDown) {
@@ -10,13 +9,9 @@ function dropDownFunc(dropDown) {
     // Add click event listener
     dropDown.addEventListener("pointerdown", handleDropdown);
   }
-  // if (dropDown.classList.contains("touch-dropdown") === true) {
-  //   // Add click event listener
-  //   dropDown.addEventListener("pointerdown", handleTouchStart);
-  // }
 }
 
-// Handle dropdown click event
+// Handle dropdown pointer event
 function handleDropdown(e) {
   //e.preventDefault();
   console.log(e);
@@ -33,30 +28,8 @@ function handleDropdown(e) {
     this.nextElementSibling.classList.add("dropdown-active");
   }
 }
-
-function touchDownFunc(touchDown) {
-  console.log(touchDown.classList.contains("touch-dropdown"));
-
-  if (touchDown.classList.contains("touch-dropdown") === true) {
-    touchDown.addEventListener("pointerdown", handleTouchStart);
-  }
-}
-// Handle touchstart event
-function handleTouchStart(event) {
-  event.preventDefault();
-  if (this.nextElementSibling.classList.contains("touch-active") === true) {
-    this.parentElement.classList.remove("touch-open");
-    this.nextElementSibling.classList.remove("touch-active");
-  } else {
-    closeDropdown();
-
-    this.parentElement.classList.add("touch-open");
-    this.nextElementSibling.classList.add("touch-active");
-  }
-}
-
 // Listen to the document click
-window.addEventListener("pointerdown", function (e) {
+window.addEventListener("pointerup", function (e) {
   // Close the menu if click happens outside menu
   if (e.target.closest(".dropdown-container") === null) {
     // Close the opened dropdown
@@ -71,15 +44,15 @@ function closeDropdown() {
     .querySelectorAll(".dropdown-container")
     .forEach(function (container) {
       container.classList.remove("dropdown-open");
-      container.classList.remove("touch-open");
+      // container.classList.remove("touch-open");
     });
 
   document.querySelectorAll(".dropdown-menu").forEach(function (menu) {
     menu.classList.remove("dropdown-active");
-    menu.classList.remove("touch-active");
+    // menu.classList.remove("touch-active");
   });
   const home = document.querySelector("#content");
-  document.querySelector(".liste").addEventListener("pointerdown", () => {
+  document.querySelector(".liste").addEventListener("pointerup", () => {
     while (home.hasChildNodes()) {
       home.removeChild(home.firstChild);
     }
@@ -102,7 +75,7 @@ fetch(url)
 
 function appendData(data) {
   const home = document.querySelector("#content");
-  document.querySelector("#man").addEventListener("click", () => {
+  document.querySelector("#man").addEventListener("pointerdown", () => {
     while (home.hasChildNodes()) {
       home.removeChild(home.firstChild);
     }
@@ -128,7 +101,7 @@ fetch(frau)
 
 function appendDataFrau(data) {
   const home2 = document.querySelector("#content");
-  document.querySelector("#frau").addEventListener("click", () => {
+  document.querySelector("#frau").addEventListener("pointerdown", () => {
     while (home2.hasChildNodes()) {
       home2.removeChild(home2.firstChild);
     }
@@ -152,7 +125,7 @@ fetch(kid)
   });
 function appendDataKid(data) {
   const home3 = document.querySelector("#content");
-  document.querySelector("#kind").addEventListener("click", () => {
+  document.querySelector("#kind").addEventListener("pointerdown", () => {
     while (home3.hasChildNodes()) {
       home3.removeChild(home3.firstChild);
     }
@@ -198,7 +171,7 @@ function appendDataCosmetics(data) {
   const extra = data.beautyExtras;
 
   const home4 = document.querySelector("#content");
-  document.querySelector("#cosmo").addEventListener("click", () => {
+  document.querySelector("#cosmo").addEventListener("pointerdown", () => {
     while (home4.hasChildNodes()) {
       home4.removeChild(home4.firstChild);
     }
@@ -296,7 +269,7 @@ function appendDataCosmeticsExtra(data) {
   const makeUp = data.permanentMakeup;
 
   const home4 = document.querySelector("#content");
-  document.querySelector("#makeup").addEventListener("click", () => {
+  document.querySelector("#makeup").addEventListener("pointerdown", () => {
     while (home4.hasChildNodes()) {
       home4.removeChild(home4.firstChild);
     }
@@ -407,7 +380,7 @@ function appendDataEyes(data) {
   const eyesmakeup = data.shoeneAugen;
 
   const home4 = document.querySelector("#content");
-  document.querySelector("#eyes").addEventListener("click", () => {
+  document.querySelector("#eyes").addEventListener("pointerdown", () => {
     while (home4.hasChildNodes()) {
       home4.removeChild(home4.firstChild);
     }
