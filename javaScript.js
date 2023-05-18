@@ -3,8 +3,6 @@ document.querySelectorAll(".dropdown-toggle").forEach(dropDownFunc);
 
 // Dropdown Open and Close function
 function dropDownFunc(dropDown) {
-  console.log(dropDown.classList.contains("click-dropdown"));
-
   if (dropDown.classList.contains("click-dropdown") === true) {
     // Add click event listener
     dropDown.addEventListener("pointerdown", handleDropdown);
