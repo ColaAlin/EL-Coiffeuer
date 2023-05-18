@@ -60,7 +60,7 @@ function closeDropdown() {
 document.querySelectorAll(".dropdown-menu").forEach(function (dropDownList) {
   dropDownList.addEventListener("pointerup", closeDropdown);
 });
-
+// handle the nav links in dropdown-menu
 document.querySelectorAll(".nav").forEach(function (link) {
   link.addEventListener("pointerdown", (e) => {
     console.log(e);
