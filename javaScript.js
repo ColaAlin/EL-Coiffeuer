@@ -13,8 +13,6 @@ function dropDownFunc(dropDown) {
 
 // Handle dropdown pointer event
 function handleDropdown(e) {
-  //e.preventDefault();
-  console.log(e);
   if (this.nextElementSibling.classList.contains("dropdown-active") === true) {
     // Close the clicked dropdown
     this.parentElement.classList.remove("dropdown-open");
@@ -61,6 +59,14 @@ function closeDropdown() {
 
 document.querySelectorAll(".dropdown-menu").forEach(function (dropDownList) {
   dropDownList.addEventListener("pointerup", closeDropdown);
+});
+
+document.querySelectorAll(".nav").forEach(function (link) {
+  link.addEventListener("pointerdown", (e) => {
+    console.log(e);
+    e.preventDefault();
+    window.location.href = link.getAttribute("href");
+  });
 });
 
 const url = "extern/preisMen.json";
