@@ -161,7 +161,9 @@ li {
 }
 @media (max-width: 600px) {
   .laura,
-  .emrah {
+  .emrah,
+  .sandra,
+  .irene {
     margin-top: 20px;
     width: 300px;
   }
@@ -200,7 +202,7 @@ li {
 @media (max-width: 600px) {
   .right {
     display: flex;
-    margin-right: 76%;
+    margin-right: 70%;
   }
 }
 @media (max-width: 600px) {
