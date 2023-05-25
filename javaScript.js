@@ -1,51 +1,38 @@
-// Get all the dropdown from document
 document.querySelectorAll(".dropdown-toggle").forEach(dropDownFunc);
 
-// Dropdown Open and Close function
 function dropDownFunc(dropDown) {
   if (dropDown.classList.contains("click-dropdown") === true) {
-    // Add click event listener
     dropDown.addEventListener("pointerdown", handleDropdown);
   }
 }
 
-// Handle dropdown pointer event
 function handleDropdown(e) {
   if (this.nextElementSibling.classList.contains("dropdown-active") === true) {
-    // Close the clicked dropdown
     this.parentElement.classList.remove("dropdown-open");
     this.nextElementSibling.classList.remove("dropdown-active");
   } else {
-    // Close the opened dropdown
     closeDropdown();
 
-    // Add the open and active class (Opening the DropDown)
     this.parentElement.classList.add("dropdown-open");
     this.nextElementSibling.classList.add("dropdown-active");
   }
 }
-// Listen to the document click
+
 window.addEventListener("pointerup", function (e) {
-  // Close the menu if click happens outside menu
   if (e.target.closest(".dropdown-container") === null) {
-    // Close the opened dropdown
     closeDropdown();
   }
 });
 
-// Close the opened Dropdowns
 function closeDropdown() {
-  // Remove the open and active class from other opened Dropdown (Closing the opened DropDown)
   document
     .querySelectorAll(".dropdown-container")
     .forEach(function (container) {
       container.classList.remove("dropdown-open");
-      // container.classList.remove("touch-open");
     });
 
   document.querySelectorAll(".dropdown-menu").forEach(function (menu) {
     menu.classList.remove("dropdown-active");
-    // menu.classList.remove("touch-active");
   });
   const home = document.querySelector("#content");
   document.querySelector(".liste").addEventListener("pointerup", () => {
@@ -58,7 +45,7 @@ function closeDropdown() {
 document.querySelectorAll(".dropdown-menu").forEach(function (dropDownList) {
   dropDownList.addEventListener("pointerup", closeDropdown);
 });
-// handle the nav links in dropdown-menu
+
 document.querySelectorAll(".nav").forEach(function (link) {
   link.addEventListener("pointerdown", (e) => {
     console.log(e);
@@ -428,22 +415,63 @@ function appendDataEyes(data) {
   });
 }
 
-//document.getElementById("btn").addEventListener("click", currentTime);
+function currentTime() {
+  let today = new Date();
+  let hour = today.getHours();
+  let minutes = today.getMinutes();
+  let day = today.getDay();
+  let openingDays = [0, 1, 2, 3, 4, 6]; // Include Saturday (6) as an opening day
 
-// function handleEvent(event) {
-//   if (event instanceof TouchEvent && event.type === "touchstart") {
-//     // Touch event
-//     console.log("Touch event occurred.");
-//   } else if (event.type === "click") {
-//     // Click event
-//     console.log("Click event occurred.");
-//   }
-// }
+  let hourString = ("0" + hour).slice(-2); // Format the hour as two digits with leading zero
+  let minutesString = ("0" + minutes).slice(-2); // Format the minutes as two digits with leading zero
 
-// // Add event listener to the element
-// const element = document.querySelector(".dropdown-container");
-// element.addEventListener("touchstart", handleEvent);
-// element.addEventListener("click", handleEvent);
+  let dayString;
+  switch (day) {
+    case 0:
+      dayString = "Sonntag";
+      break;
+    case 1:
+      dayString = "Montag";
+      break;
+    case 2:
+      dayString = "Dienstag";
+      break;
+    case 3:
+      dayString = "Mittwoch";
+      break;
+    case 4:
+      dayString = "Donnerstag";
+      break;
+    case 5:
+      dayString = "Freitag";
+      break;
+    case 6:
+      dayString = "Samstag";
+      break;
+    default:
+      dayString = "";
+  }
+
+  document.getElementById("time").textContent =
+    dayString + " " + hourString + ":" + minutesString; // Display the hour
+  document.getElementById("time").style.fontWeight = "bold";
+
+  let nowElement = document.getElementById("now");
+  if (
+    (day === 6 && hour >= 9 && hour < 14) ||
+    (day !== 6 && hour >= 9 && hour < 19 && openingDays.includes(day))
+  ) {
+    nowElement.textContent = "Offen";
+    nowElement.style.color = "green";
+    nowElement.style.fontWeight = "bold";
+  } else {
+    nowElement.textContent = "Geschlossen";
+    nowElement.style.color = "red";
+    nowElement.style.fontWeight = "bold";
+  }
+}
+
+currentTime();
 
 // function appendInsta(data) {
 //   console.log(data);
