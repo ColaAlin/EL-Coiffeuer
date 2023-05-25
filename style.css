@@ -54,10 +54,12 @@ li {
 }
 
 .article {
-  padding-top: 50px;
   padding-left: 30px;
 }
 .open-closed {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   margin-left: 20px;
 }
 .wraper {
@@ -128,27 +130,24 @@ li {
 .right {
   display: flex;
   flex-direction: row-reverse;
-  margin-right: 100px;
+  margin-right: 130px;
 }
 .right-two {
   display: flex;
   flex-direction: row-reverse;
-  margin-right: 80px;
+  margin-right: 110px;
 }
 .right-irene {
   display: flex;
   flex-direction: row-reverse;
-  margin-right: 100px;
+  margin-right: 120px;
 }
 .right-two-irene {
   display: flex;
   flex-direction: row-reverse;
-  margin-right: 95px;
+  margin-right: 120px;
 }
 
-.team {
-  margin-left: 40px;
-}
 .laura {
   margin-top: 80px;
 }
@@ -286,9 +285,7 @@ li {
 }
 @media (max-width: 600px) {
   .article {
-    padding-right: 30px;
-    margin-left: -10px;
-    background-color: white;
+    _padding-left: 35px;
   }
 }
 @media (max-width: 600px) {

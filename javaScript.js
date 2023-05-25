@@ -452,9 +452,11 @@ function currentTime() {
       dayString = "";
   }
 
+  let dateOptions = { year: "numeric", month: "long", day: "numeric" };
+  let dateString = today.toLocaleDateString("de-DE", dateOptions);
+
   document.getElementById("time").textContent =
-    dayString + " " + hourString + ":" + minutesString; // Display the hour
-  document.getElementById("time").style.fontWeight = "bold";
+    dateString + " " + dayString + " " + hourString + ":" + minutesString; // Display the hour
 
   let nowElement = document.getElementById("now");
   if (
