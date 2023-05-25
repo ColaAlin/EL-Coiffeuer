@@ -196,31 +196,32 @@ li {
 }
 @media (max-width: 600px) {
   .team {
-    margin-left: 80px;
+    display: flex;
+    align-self: center;
+    margin-right: 40px;
   }
 }
 @media (max-width: 600px) {
   .right {
     display: flex;
-    margin-right: 70%;
+    margin-right: 83%;
   }
 }
 @media (max-width: 600px) {
   .right-two {
     display: flex;
-    margin-right: 70%;
+    margin-right: 73%;
   }
 }
 @media (max-width: 600px) {
-  .right-two-irene,
-  .right-irene {
+  .right-two-irene {
     display: flex;
-    margin-right: 79%;
+    margin-right: 85%;
   }
 }
 @media (max-width: 600px) {
   .right-irene {
-    margin-right: 83%;
+    margin-right: 86%;
   }
 }
 
