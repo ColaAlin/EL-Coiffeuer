@@ -420,7 +420,7 @@ function currentTime() {
   let hour = today.getHours();
   let minutes = today.getMinutes();
   let day = today.getDay();
-  let openingDays = [0, 1, 2, 3, 4, 6]; // Include Saturday (6) as an opening day
+  let openingDays = [0, 1, 2, 3, 4, 5, 6]; // Include Saturday (6) as an opening day
 
   let hourString = ("0" + hour).slice(-2); // Format the hour as two digits with leading zero
   let minutesString = ("0" + minutes).slice(-2); // Format the minutes as two digits with leading zero
@@ -463,11 +463,11 @@ function currentTime() {
     (day === 6 && hour >= 9 && hour < 14) ||
     (day !== 6 && hour >= 9 && hour < 19 && openingDays.includes(day))
   ) {
-    nowElement.textContent = "Offen";
-    nowElement.style.color = "green";
+    nowElement.textContent = "Wir haben geöffnet";
+    nowElement.style.color = "rgb(6, 189, 6)";
     nowElement.style.fontWeight = "bold";
   } else {
-    nowElement.textContent = "Geschlossen";
+    nowElement.textContent = "Wir haben geschlossen";
     nowElement.style.color = "red";
     nowElement.style.fontWeight = "bold";
   }
@@ -475,18 +475,17 @@ function currentTime() {
 
 currentTime();
 
-// function appendInsta(data) {
-//   console.log(data);
-//   document.querySelector("section").innerHTML = JSON.stringify(data);
-// }
+// IGQVJVZAUZAzbWVXbFhVczhpcDVHaHNUajktXzJMdEthRlhWNW5RNUZApQWRLLTlLM3JRdTBiZAERFbFdaLXRCQU9ibGJUVUgtYVNMcWk0RDJYTjVIZAllfMG5NV29jZA1BMQ1dQYXNJOG1xQktoTFdBeWlyYgZDZD;
 
-// fetch("https://www.instagram.com/el_coiffeure_cosmetics/")
-//   .then(function (response) {
-//     return response.json();
-//   })
-//   .then(function (data) {
-//     appendInsta(data);
-//   })
-//   .catch(function (error) {
-//     console.log("error: " + error);
-//   });
+let userFeed = new Instafeed({
+  get: "user",
+  userId: "el_coiffeure_cosmetics",
+  target: "instafeed-container",
+  resolution: "low_resolution",
+  accessToken:
+    "IGQVJVZAUZAzbWVXbFhVczhpcDVHaHNUajktXzJMdEthRlhWNW5RNUZApQWRLLTlLM3JRdTBiZAERFbFdaLXRCQU9ibGJUVUgtYVNMcWk0RDJYTjVIZAllfMG5NV29jZA1BMQ1dQYXNJOG1xQktoTFdBeWlyYgZDZD",
+  limit: 10,
+  template:
+    '<a href="{{link}}" target="_blank"><img class="feed-img" src="{{image}}" /></a>',
+});
+userFeed.run();
