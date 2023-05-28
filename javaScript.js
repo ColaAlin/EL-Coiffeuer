@@ -6,7 +6,7 @@ function dropDownFunc(dropDown) {
   }
 }
 
-function handleDropdown(e) {
+function handleDropdown() {
   if (this.nextElementSibling.classList.contains("dropdown-active") === true) {
     this.parentElement.classList.remove("dropdown-open");
     this.nextElementSibling.classList.remove("dropdown-active");
@@ -18,27 +18,52 @@ function handleDropdown(e) {
   }
 }
 
-window.addEventListener("pointerup", function (e) {
-  if (e.target.closest(".dropdown-container") === null) {
-    closeDropdown();
-  }
-});
+// function closeDropdown() {
+//   document
+//     .querySelectorAll(".dropdown-container")
+//     .forEach(function (container) {
+//       container.classList.remove("dropdown-open");
+//     });
+
+//   document.querySelectorAll(".dropdown-menu").forEach(function (menu) {
+//     menu.classList.remove("dropdown-active");
+//   });
+//    const home = document.getElementById("content");
+//    document.querySelector(".liste").addEventListener("pointerup", (e) => {
+//      e.stopImmediatePropagation();
+//      while (home.hasChildNodes()) {
+//        home.removeChild(home.firstChild);
+//      }
+//    });
+// }
 
 function closeDropdown() {
-  document
-    .querySelectorAll(".dropdown-container")
-    .forEach(function (container) {
-      container.classList.remove("dropdown-open");
-    });
+  const dropdownContainers = document.querySelectorAll(".dropdown-container");
+
+  dropdownContainers.forEach(function (container) {
+    container.classList.remove("dropdown-open");
+
+    if (!container.hasEventListener) {
+      container.addEventListener("pointerup", function (event) {
+        event.stopPropagation();
+        const home = document.getElementById("content");
+
+        if (home.classList.contains("closed")) {
+          home.classList.remove("closed");
+        } else {
+          while (home.hasChildNodes()) {
+            home.removeChild(home.firstChild);
+          }
+          home.classList.add("closed");
+        }
+      });
+
+      container.hasEventListener = true;
+    }
+  });
 
   document.querySelectorAll(".dropdown-menu").forEach(function (menu) {
     menu.classList.remove("dropdown-active");
-  });
-  const home = document.querySelector("#content");
-  document.querySelector(".liste").addEventListener("pointerup", () => {
-    while (home.hasChildNodes()) {
-      home.removeChild(home.firstChild);
-    }
   });
 }
 
@@ -48,7 +73,6 @@ document.querySelectorAll(".dropdown-menu").forEach(function (dropDownList) {
 
 document.querySelectorAll(".nav").forEach(function (link) {
   link.addEventListener("pointerdown", (e) => {
-    console.log(e);
     e.preventDefault();
     window.location.href = link.getAttribute("href");
   });
@@ -461,7 +485,11 @@ function currentTime() {
   let nowElement = document.getElementById("now");
   if (
     (day === 6 && hour >= 9 && hour < 14) ||
-    (day !== 6 && hour >= 9 && hour < 19 && openingDays.includes(day))
+    (day !== 0 &&
+      day !== 1 &&
+      hour >= 9 &&
+      hour < 19 &&
+      openingDays.includes(day))
   ) {
     nowElement.textContent = "Wir haben geöffnet";
     nowElement.style.color = "rgb(6, 189, 6)";
@@ -482,8 +510,7 @@ let userFeed = new Instafeed({
   resolution: "low_resolution",
   accessToken:
     "IGQVJWREN3TlhhNHJIMVctcFlfR1RrVlUxQnZACLUIyWl9fRlkyYkExMnlOT1BvT3g5WlFOWkY0UEZAFVkxIRVUwYlZAKVjBxQkhOdXR6US1PNzlGbXBoYk95M1JpNTJNQzJpWVNHVm05TmlIN3B4ZAzFrdQZDZD",
-  limit: 10,
-  template:
-    '<a href="{{link}}" target="_blank"><img class="feed-img" src="{{image}}" /></a>',
+  limit: 12,
+  template: '<a href="{{link}}" target="_blank"><img src="{{image}}" /></a>',
 });
 userFeed.run();
