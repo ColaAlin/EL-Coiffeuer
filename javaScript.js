@@ -503,6 +503,22 @@ function currentTime() {
 
 currentTime();
 
+const smallImages = document.getElementsByClassName("small");
+const overlay = document.getElementById("overlay");
+const largeImage = document.getElementById("largeImage");
+
+for (let i = 0; i < smallImages.length; i++) {
+  smallImages[i].addEventListener("click", function () {
+    const imageUrl = this.src;
+    largeImage.src = imageUrl;
+    overlay.style.display = "flex";
+  });
+}
+
+overlay.addEventListener("click", function () {
+  overlay.style.display = "none";
+});
+
 let userFeed = new Instafeed({
   get: "user",
   userId: "el_coiffeure_cosmetics",
