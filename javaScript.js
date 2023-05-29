@@ -444,10 +444,10 @@ function currentTime() {
   let hour = today.getHours();
   let minutes = today.getMinutes();
   let day = today.getDay();
-  let openingDays = [0, 1, 2, 3, 4, 5, 6]; // Include Saturday (6) as an opening day
+  let openingDays = [0, 1, 2, 3, 4, 5, 6];
 
-  let hourString = ("0" + hour).slice(-2); // Format the hour as two digits with leading zero
-  let minutesString = ("0" + minutes).slice(-2); // Format the minutes as two digits with leading zero
+  let hourString = ("0" + hour).slice(-2);
+  let minutesString = ("0" + minutes).slice(-2);
 
   let dayString;
   switch (day) {
@@ -483,13 +483,17 @@ function currentTime() {
     dateString + " " + dayString + " " + hourString + ":" + minutesString; // Display the hour
 
   let nowElement = document.getElementById("now");
+
+  let isHoliday = checkHoliday(today);
+
   if (
     (day === 6 && hour >= 9 && hour < 14) ||
     (day !== 0 &&
       day !== 1 &&
       hour >= 9 &&
       hour < 19 &&
-      openingDays.includes(day))
+      openingDays.includes(day) &&
+      !isHoliday)
   ) {
     nowElement.textContent = "Wir haben geöffnet";
     nowElement.style.color = "rgb(6, 189, 6)";
@@ -499,6 +503,30 @@ function currentTime() {
     nowElement.style.color = "red";
     nowElement.style.fontWeight = "bold";
   }
+}
+
+async function checkHoliday(date) {
+  const year = date.getFullYear();
+  const month = date.getMonth() + 1;
+  const day = date.getDate();
+
+  const response = await fetch(
+    `https://feiertage-api.de/api/v1/holidays/NW/${year}`
+  );
+  const data = await response.json();
+
+  for (const holiday of data) {
+    const holidayDate = new Date(holiday.datum);
+    if (
+      holidayDate.getFullYear() === year &&
+      holidayDate.getMonth() + 1 === month &&
+      holidayDate.getDate() === day
+    ) {
+      return true;
+    }
+  }
+
+  return false;
 }
 
 currentTime();
