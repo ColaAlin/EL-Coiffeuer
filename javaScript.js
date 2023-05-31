@@ -18,25 +18,6 @@ function handleDropdown() {
   }
 }
 
-// function closeDropdown() {
-//   document
-//     .querySelectorAll(".dropdown-container")
-//     .forEach(function (container) {
-//       container.classList.remove("dropdown-open");
-//     });
-
-//   document.querySelectorAll(".dropdown-menu").forEach(function (menu) {
-//     menu.classList.remove("dropdown-active");
-//   });
-//    const home = document.getElementById("content");
-//    document.querySelector(".liste").addEventListener("pointerup", (e) => {
-//      e.stopImmediatePropagation();
-//      while (home.hasChildNodes()) {
-//        home.removeChild(home.firstChild);
-//      }
-//    });
-// }
-
 function closeDropdown() {
   const dropdownContainers = document.querySelectorAll(".dropdown-container");
 
@@ -484,16 +465,13 @@ function currentTime() {
 
   let nowElement = document.getElementById("now");
 
-  let isHoliday = checkHoliday(today);
-
   if (
     (day === 6 && hour >= 9 && hour < 14) ||
     (day !== 0 &&
       day !== 1 &&
       hour >= 9 &&
       hour < 19 &&
-      openingDays.includes(day) &&
-      !isHoliday)
+      openingDays.includes(day))
   ) {
     nowElement.textContent = "Wir haben geöffnet";
     nowElement.style.color = "rgb(6, 189, 6)";
@@ -503,30 +481,6 @@ function currentTime() {
     nowElement.style.color = "red";
     nowElement.style.fontWeight = "bold";
   }
-}
-
-async function checkHoliday(date) {
-  const year = date.getFullYear();
-  const month = date.getMonth() + 1;
-  const day = date.getDate();
-
-  const response = await fetch(
-    `https://feiertage-api.de/api/v1/holidays/NW/${year}`
-  );
-  const data = await response.json();
-
-  for (const holiday of data) {
-    const holidayDate = new Date(holiday.datum);
-    if (
-      holidayDate.getFullYear() === year &&
-      holidayDate.getMonth() + 1 === month &&
-      holidayDate.getDate() === day
-    ) {
-      return true;
-    }
-  }
-
-  return false;
 }
 
 currentTime();
