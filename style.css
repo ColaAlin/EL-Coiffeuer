@@ -26,9 +26,14 @@ body {
   margin-top: 20px;
   padding-top: 20px;
   background-color: black;
-  height: 170px;
+  height: 180px;
   color: white;
   font-size: 15px;
+}
+.rights {
+  display: flex;
+  flex-direction: row-reverse;
+  margin-right: 20px;
 }
 
 .link {
