@@ -8,13 +8,13 @@ body {
   min-height: 100vh;
 }
 .background {
-  background-image: url("img/woman.jpg");
+  background-image: url("img/woman3.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
-  background-size: 100% 100%;
+  background-position: center center;
+  padding-bottom: 30px;
 }
-
 .headline {
   position: relative;
 }
@@ -27,9 +27,10 @@ body {
   padding-left: 30px;
   margin-right: 30px;
   padding-right: 30px;
+  padding-bottom: 20px;
   border-radius: 20px 20px 20px 20px;
   width: auto;
-  height: 190px;
+  height: auto;
   padding-top: 25px;
   -webkit-box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
     12px 17px 17px 2px rgba(0, 0, 0, 0.16);
@@ -87,11 +88,17 @@ li {
 
 h4,
 h5 {
-  color: whitesmoke;
+  background-color: white;
+  color: black;
+  border-radius: 10px;
+  -webkit-box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
+    12px 17px 17px 2px rgba(0, 0, 0, 0.16);
+  box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
+    12px 17px 17px 2px rgba(0, 0, 0, 0.16);
 }
 
 .article {
-  padding-left: 30px;
+  margin-left: 30px;
 }
 .team {
   margin-top: 30px;
@@ -129,9 +136,9 @@ h5 {
   display: flex;
   flex-direction: row-reverse;
   gap: 40px;
-  width: 1360px;
+  width: auto;
   background-color: white;
-  opacity: 0.8;
+  opacity: 0.9;
   border-radius: 50px 100px 10px 50px;
 }
 .unturned {
@@ -139,25 +146,10 @@ h5 {
   flex-direction: row;
   align-items: flex-start;
   gap: 40px;
-  width: 1360;
+  width: auto;
   background-color: white;
-  opacity: 0.8;
+  opacity: 0.9;
   border-radius: 0px 50px 50px 100px;
-}
-
-.small-cont {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
-.out {
-  height: 340px;
-  width: 270px;
-  border-radius: 10px 100px 0px 100px;
-  -webkit-box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
-    12px 17px 17px 2px rgba(0, 0, 0, 0.16);
-  box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
-    12px 17px 17px 2px rgba(0, 0, 0, 0.16);
 }
 .small {
   border-radius: 100%;
@@ -173,20 +165,31 @@ h5 {
   flex-direction: column;
   gap: 20px;
   height: auto;
+  width: auto;
 }
-.chair {
+.out {
   height: 340px;
   width: 270px;
-  border-radius: 10px 100px 10px 100px;
+  border-radius: 0px 100px 0px 100px;
   -webkit-box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
     12px 17px 17px 2px rgba(0, 0, 0, 0.16);
   box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
     12px 17px 17px 2px rgba(0, 0, 0, 0.16);
 }
+.chair {
+  height: 340px;
+  width: 270px;
+  border-radius: 0px 100px 10px 100px;
+  -webkit-box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
+    12px 17px 17px 2px rgba(0, 0, 0, 0.16);
+  box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
+    12px 17px 17px 2px rgba(0, 0, 0, 0.16);
+}
+
 .woman {
   height: 340px;
   width: 270px;
-  border-radius: 10px 100px 10px 100px;
+  border-radius: 0px 100px 0px 100px;
   -webkit-box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
     12px 17px 17px 2px rgba(0, 0, 0, 0.16);
   box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
@@ -195,7 +198,7 @@ h5 {
 .womanTwo {
   height: 340px;
   width: 270px;
-  border-radius: 10px 100px 10px 100px;
+  border-radius: 0px 100px 10px 100px;
   -webkit-box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
     12px 17px 17px 2px rgba(0, 0, 0, 0.16);
   box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
@@ -211,30 +214,62 @@ h5 {
   color: goldenrod;
 }
 
-.right {
-  display: flex;
-  flex-direction: row-reverse;
-  margin-right: 130px;
-  color: whitesmoke;
-}
+.right,
 .right-two {
-  display: flex;
-  flex-direction: row-reverse;
-  margin-right: 110px;
-  color: whitesmoke;
+  background-color: white;
+  color: black;
+  border-radius: 10px;
+  width: 100px;
+  padding-left: 7px;
+  opacity: 0.8;
 }
-.right-irene,
-.right-two-irene {
-  display: flex;
-  flex-direction: row-reverse;
-  margin-right: 120px;
-  color: whitesmoke;
+.right {
+  width: 70px;
+  padding-right: 2px;
 }
 
+.right-irene,
+.right-two-irene {
+  background-color: white;
+  color: black;
+  border-radius: 10px;
+  width: 60px;
+  padding-left: 10px;
+  opacity: 0.8;
+}
+.right-two-irene {
+  padding-left: 7px;
+}
+.left,
+.left-two {
+  background-color: white;
+  color: black;
+  border-radius: 10px;
+  width: 60px;
+  padding-left: 7px;
+  opacity: 0.8;
+}
+.left {
+  width: 110px;
+}
+.left-laura,
+.left-two-laura {
+  background-color: white;
+  color: black;
+  border-radius: 10px;
+  width: 60px;
+  padding-left: 7px;
+  opacity: 0.8;
+}
+.left-two-laura {
+  width: 320px;
+}
 .laura {
   margin-top: 80px;
+  width: auto;
 }
 .emrah {
+  width: auto;
   margin-top: 100px;
 }
 
@@ -379,18 +414,15 @@ h5 {
   box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
     12px 17px 17px 2px rgba(0, 0, 0, 0.16);
 }
-
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .background {
-    background-image: url("img/woman.jpg");
-    /* background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    background-size: 100% 100%;
-    _z-index: -1; */
-    _background-repeat: repeat-x;
-    _width: auto;
-    _height: auto;
+    background-attachment: scroll;
+    background-size: auto 100%;
+  }
+}
+@media (max-width: 600px) {
+  .article {
+    margin-left: 0;
   }
   .rights {
     display: flex;
@@ -415,7 +447,6 @@ h5 {
     max-width: auto;
     margin-left: 15px;
   }
-
   .laura,
   .emrah,
   .sandra,
@@ -426,18 +457,20 @@ h5 {
 
   .out,
   .woman {
-    height: 390px;
-    width: 290px;
+    height: 420px;
+    width: 320px;
   }
 
   .womanTwo {
-    height: 410px;
-    width: 290px;
+    height: 420px;
+    width: 320px;
+    border-radius: 0px 100px 0px 100px;
   }
 
   .chair {
-    height: 390px;
-    width: 290px;
+    height: 420px;
+    width: 320px;
+    border-radius: 0px 100px 0px 100px;
   }
 
   .small {
@@ -453,23 +486,22 @@ h5 {
     margin-bottom: 20px;
   }
 
-  .right {
-    display: flex;
-    margin-right: 83%;
+  h4,
+  h5 {
+    margin-left: 20px;
   }
-
+  .right {
+    margin-right: 290px;
+  }
   .right-two {
-    display: flex;
-    margin-right: 73%;
+    margin-right: 260px;
+  }
+  .right-irene {
+    margin-right: 305px;
   }
 
   .right-two-irene {
-    display: flex;
-    margin-right: 85%;
-  }
-
-  .right-irene {
-    margin-right: 86%;
+    margin-right: 300px;
   }
 
   .footer {
@@ -479,21 +511,20 @@ h5 {
   .small-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 0;
     max-width: auto;
   }
 
+  .unturned,
   .turned {
     display: flex;
     flex-direction: column;
-    gap: 0;
-    width: auto;
-  }
-
-  .unturned {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-    width: auto;
+    align-items: center;
+    row-gap: 10px;
+    width: 320px;
+    margin-left: 20px;
+    border-radius: 0px 100px 65px 65px;
+    padding-bottom: 10px;
   }
 
   .wraper {
@@ -524,7 +555,15 @@ h5 {
     grid-template-columns: 0.5fr 0.5fr 0.5fr 0.5fr;
     grid-gap: 5px;
     max-width: auto;
-    margin-left: 170px;
+    margin-left: 120px;
+  }
+  .laura {
+    margin-top: 30px;
+  }
+  .sandra,
+  .emrah,
+  .irene {
+    margin-top: 60px;
   }
 }
 
