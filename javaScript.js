@@ -290,34 +290,7 @@ function appendDataCosmeticsExtra(data) {
           "</li>" +
           "<br>"
       );
-      home4.insertAdjacentHTML(
-        "afterbegin",
-        "<li>" +
-          "<br>" +
-          item.microblading +
-          "<br>" +
-          item.microPreis +
-          "<br>" +
-          item.oneYear2 +
-          "<br>" +
-          item.oneYearPreis2 +
-          "</li>" +
-          "<br>"
-      );
-      home4.insertAdjacentHTML(
-        "afterbegin",
-        "<li>" +
-          "<br>" +
-          item.lips +
-          "<br>" +
-          item.lipsPreis +
-          "<br>" +
-          item.oneYear3 +
-          "<br>" +
-          item.oneYearPreis3 +
-          "</li>" +
-          "<br>"
-      );
+
       home4.insertAdjacentHTML(
         "afterbegin",
         "<li>" +

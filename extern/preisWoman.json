@@ -1,11 +1,11 @@
 [
   {
     "hair": "waschen, schneiden, föhnen",
-    "preis": "Kurz &nbsp 37.00 € &nbsp | &nbsp Mittel 47.00 € &nbsp | &nbsp Lang 57.00 €"
+    "preis": "Kurz &nbsp 32.00 € &nbsp | &nbsp Mittel 42.00 € &nbsp | &nbsp Lang 52.00 €"
   },
   {
     "hair": "waschen, föhnen oder legen",
-    "preis": "Kurz &nbsp 28.00 € &nbsp | &nbsp  Mittel 33.00 € &nbsp | &nbsp Lang 37.00 €"
+    "preis": "Kurz &nbsp 23.00 € &nbsp | &nbsp  Mittel 28.00 € &nbsp | &nbsp Lang 32.00 €"
   },
 
   {
@@ -18,11 +18,11 @@
   },
   {
     "hair": "Färben (Ansatz)",
-    "preis": "ab 42.00 €"
+    "preis": "ab 38.00 €"
   },
   {
     "hair": "Tönung",
-    "preis": "ab 38.00 €"
+    "preis": "ab 32.00 €"
   },
   {
     "hair": "Strähnen Oberkopf",
@@ -34,7 +34,7 @@
   },
   {
     "hair": "Balayage",
-    "preis": "ab 150.00 €"
+    "preis": "ab 180.00 €"
   },
   {
     "hair": "Highlights bis 7 Stück",
