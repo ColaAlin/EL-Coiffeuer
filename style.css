@@ -19,7 +19,7 @@ body {
   position: relative;
 }
 .head {
-  height: 450px;
+  height: 470px;
   width: 100%;
 }
 .description {
@@ -108,23 +108,47 @@ h5 {
   width: 110px;
   padding-left: 2px;
 }
-/* .wrapper-open-logo {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  height: auto;
-  width: auto;
-}
-.wrapper-open-logo div:last-child {
-  margin-left: 710px;
-} */
+
 .logo-partner-g {
-  _padding-right: 30px;
+  padding-top: 10px;
   height: 70px;
   width: 70px;
 }
 .logo-partner-r {
   height: 40px;
   width: 60px;
+}
+.logo-partner-h {
+  _padding-left: 20px;
+  height: 40px;
+  width: 70px;
+}
+.logo-partner-w {
+  height: 60px;
+  width: 70px;
+}
+.logo-partner-re {
+  height: 60px;
+  border-radius: 100%;
+  width: 70px;
+}
+.partner-logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 40px;
+  margin-top: 10px;
+  height: auto;
+  width: auto;
+  padding-left: 7px;
+  padding-right: 7px;
+  border-radius: 10px;
+  -webkit-box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
+    12px 17px 17px 2px rgba(0, 0, 0, 0.16);
+  box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
+    12px 17px 17px 2px rgba(0, 0, 0, 0.16);
+  background-color: white;
+  opacity: 0.8;
 }
 .open-closed {
   display: flex;
@@ -143,32 +167,8 @@ h5 {
   background-color: white;
   opacity: 0.8;
 }
-.partner {
-  background-color: white;
-  opacity: 0.8;
-  width: 120px;
-  padding-left: 4px;
-  border-radius: 10px;
-  margin-left: 40px;
-}
-.partner-logo {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin-left: 40px;
-  _margin-top: 10px;
-  height: auto;
-  width: 1835px;
-  padding-left: 7px;
-  _padding-bottom: 10px;
-  _padding-top: 10px;
-  border-radius: 10px;
-  -webkit-box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
-    12px 17px 17px 2px rgba(0, 0, 0, 0.16);
-  box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
-    12px 17px 17px 2px rgba(0, 0, 0, 0.16);
-  background-color: white;
-  opacity: 0.8;
+#now {
+  margin-left: 30px;
 }
 .wraper {
   display: flex;
@@ -310,17 +310,18 @@ h5 {
   width: 320px;
 }
 .laura {
-  margin-top: 80px;
+  padding-top: 80px;
   width: auto;
 }
 .emrah {
+  padding-top: 40px;
   width: auto;
   margin-top: 100px;
 }
 
 .irene,
 .sandra {
-  margin-top: 100px;
+  padding-top: 50px;
 }
 
 .dropdown-container {
@@ -340,6 +341,7 @@ h5 {
 .dropdown-toggle:focus {
   background-color: goldenrod;
   color: #ffffff;
+  border-radius: 5px;
 }
 #cosmo,
 #makeup,
@@ -392,7 +394,6 @@ h5 {
 .dropdown-menu {
   z-index: 10;
   position: absolute;
-
   width: 300px;
   height: 460px;
   border-radius: 0px 30px 30px 0px;
@@ -419,12 +420,12 @@ h5 {
 }
 
 .icon {
+  _padding-left: 5px;
   display: flex;
   align-items: center;
 }
-
 .insta-title {
-  margin-left: 20px;
+  margin-left: 30px;
   margin-bottom: 20px;
   -webkit-box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
     12px 17px 17px 2px rgba(0, 0, 0, 0.16);
@@ -474,16 +475,10 @@ h5 {
 }
 
 @media (max-width: 767px) {
-  .wrapper-open-logo {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    height: auto;
-    width: auto;
+  .insta-title {
+    margin-left: 15px;
   }
-  .wrapper-open-logo div:last-child {
-    margin-left: 30px;
-  }
+
   .partner {
     background-color: white;
     opacity: 0.8;
@@ -511,7 +506,7 @@ h5 {
     width: auto;
   }
   .head {
-    height: 200px;
+    height: auto;
     width: 100%;
   }
 
@@ -527,6 +522,7 @@ h5 {
   .emrah,
   .sandra,
   .irene {
+    padding-top: 0;
     margin-top: 20px;
     width: 300px;
   }
@@ -634,11 +630,13 @@ h5 {
     margin-left: 120px;
   }
   .laura {
+    padding-top: 0;
     margin-top: 30px;
   }
   .sandra,
   .emrah,
   .irene {
+    padding-top: 0;
     margin-top: 60px;
   }
 }
@@ -681,7 +679,7 @@ h5 {
     width: auto;
   }
   .head {
-    height: 200px;
+    height: auto;
     width: 100%;
   }
 
