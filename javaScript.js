@@ -1,74 +1,81 @@
-document.querySelectorAll(".dropdown-toggle").forEach(dropDownFunc);
+document.addEventListener("pointerdown", function (event) {
+  if (event.target.matches(".dropdown-toggle.click-dropdown")) {
+    handleDropdown.call(event.target);
+  }
+});
+
+let dropdownToggles = document.querySelectorAll(".dropdown-toggle");
+let dropdownContainers = document.querySelectorAll(".dropdown-container");
+let dropdownMenus = document.querySelectorAll(".dropdown-menu");
+let home = document.getElementById("content");
 
 function dropDownFunc(dropDown) {
-  if (dropDown.classList.contains("click-dropdown") === true) {
+  if (dropDown.classList.contains("click-dropdown")) {
     dropDown.addEventListener("pointerdown", handleDropdown);
   }
 }
 
 function handleDropdown() {
-  if (this.nextElementSibling.classList.contains("dropdown-active") === true) {
-    this.parentElement.classList.remove("dropdown-open");
-    this.nextElementSibling.classList.remove("dropdown-active");
+  let nextElementSibling = this.nextElementSibling;
+  let parentElement = this.parentElement;
+
+  if (nextElementSibling.classList.contains("dropdown-active")) {
+    parentElement.classList.remove("dropdown-open");
+    nextElementSibling.classList.remove("dropdown-active");
   } else {
     closeDropdown();
 
-    this.parentElement.classList.add("dropdown-open");
-    this.nextElementSibling.classList.add("dropdown-active");
+    parentElement.classList.add("dropdown-open");
+    nextElementSibling.classList.add("dropdown-active");
   }
 }
 
 function closeDropdown() {
-  const dropdownContainers = document.querySelectorAll(".dropdown-container");
-
   dropdownContainers.forEach(function (container) {
     container.classList.remove("dropdown-open");
 
     if (!container.hasEventListener) {
-      container.addEventListener("pointerup", function (event) {
-        event.stopPropagation();
-        const home = document.getElementById("content");
-
-        if (home.classList.contains("closed")) {
-          home.classList.remove("closed");
-        } else {
-          while (home.hasChildNodes()) {
-            home.removeChild(home.firstChild);
-          }
-          home.classList.add("closed");
-        }
-      });
+      container.addEventListener("pointerup", handlePointerUp);
 
       container.hasEventListener = true;
     }
   });
 
-  document.querySelectorAll(".dropdown-menu").forEach(function (menu) {
+  dropdownMenus.forEach(function (menu) {
     menu.classList.remove("dropdown-active");
   });
 }
 
-document.querySelectorAll(".dropdown-menu").forEach(function (dropDownList) {
+function handlePointerUp(event) {
+  event.stopPropagation();
+
+  if (home.classList.contains("closed")) {
+    home.classList.remove("closed");
+  } else {
+    while (home.hasChildNodes()) {
+      home.removeChild(home.firstChild);
+    }
+    home.classList.add("closed");
+  }
+}
+
+dropdownToggles.forEach(dropDownFunc);
+dropdownMenus.forEach(function (dropDownList) {
   dropDownList.addEventListener("pointerup", closeDropdown);
 });
 
-document.querySelectorAll(".nav").forEach(function (link) {
-  link.addEventListener("pointerdown", (e) => {
-    e.preventDefault();
-    window.location.href = link.getAttribute("href");
-  });
+document.addEventListener("pointerdown", function (event) {
+  if (event.target.matches(".nav")) {
+    event.preventDefault();
+    window.location.href = event.target.getAttribute("href");
+  }
 });
 
 const url = "extern/preisMen.json";
 
 fetch(url)
-  .then(function (response) {
-    return response.json();
-  })
-  .then(function (data) {
-    appendData(data);
-  });
-
+  .then((response) => response.json())
+  .then((data) => appendData(data));
 function appendData(data) {
   const home = document.querySelector("#content");
   document.querySelector("#man").addEventListener("pointerdown", () => {
@@ -88,12 +95,8 @@ function appendData(data) {
 const frau = "extern/preisWoman.json";
 
 fetch(frau)
-  .then(function (response) {
-    return response.json();
-  })
-  .then(function (data) {
-    appendDataFrau(data);
-  });
+  .then((response) => response.json())
+  .then((data) => appendDataFrau(data));
 
 function appendDataFrau(data) {
   const home2 = document.querySelector("#content");
@@ -110,15 +113,13 @@ function appendDataFrau(data) {
     }
   });
 }
+
 const kid = "extern/preisKids.json";
 
 fetch(kid)
-  .then(function (response) {
-    return response.json();
-  })
-  .then(function (data) {
-    appendDataKid(data);
-  });
+  .then((response) => response.json())
+  .then((data) => appendDataKid(data));
+
 function appendDataKid(data) {
   const home3 = document.querySelector("#content");
   document.querySelector("#kind").addEventListener("pointerdown", () => {
@@ -153,13 +154,8 @@ function appendDataKid(data) {
 
 const cosmetics = "extern/preisCosmetics.json";
 fetch(cosmetics)
-  .then(function (response) {
-    return response.json();
-  })
-  .then(function (data) {
-    appendDataCosmetics(data);
-  });
-
+  .then((response) => response.json())
+  .then((data) => appendDataCosmetics(data));
 function appendDataCosmetics(data) {
   const behaEins = data.behandlungEins;
   const behaZwei = data.behandlungZwei;
@@ -253,13 +249,10 @@ function appendDataCosmetics(data) {
 }
 
 const permanent = "extern/permanentMakeup.json";
+
 fetch(permanent)
-  .then(function (response) {
-    return response.json();
-  })
-  .then(function (data) {
-    appendDataCosmeticsExtra(data);
-  });
+  .then((response) => response.json())
+  .then((data) => appendDataCosmeticsExtra(data));
 
 function appendDataCosmeticsExtra(data) {
   const makeUp = data.permanentMakeup;
@@ -338,12 +331,8 @@ function appendDataCosmeticsExtra(data) {
 }
 const eyesMakeup = "extern/shoeneAugen.json";
 fetch(eyesMakeup)
-  .then(function (response) {
-    return response.json();
-  })
-  .then(function (data) {
-    appendDataEyes(data);
-  });
+  .then((response) => response.json())
+  .then((data) => appendDataEyes(data));
 
 function appendDataEyes(data) {
   const eyesmakeup = data.shoeneAugen;
@@ -485,3 +474,56 @@ let userFeed = new Instafeed({
   template: '<a href="{{link}}" target="_blank"><img src="{{image}}" /></a>',
 });
 userFeed.run();
+
+/// Video start
+
+function isMobileDevice() {
+  return /Mobi|Android/i.test(navigator.userAgent);
+}
+
+function autoplayVideo() {
+  let video = document.getElementById("video");
+
+  if (video && isMobileDevice()) {
+    video.autoplay = true;
+    video.load();
+  }
+}
+function displayFallbackImage() {
+  let video = document.getElementById("video");
+  let fallbackImage = document.getElementById("fallback-image");
+
+  if (video && fallbackImage) {
+    video.addEventListener("error", function () {
+      video.style.display = "none";
+      fallbackImage.style.display = "block";
+    });
+  }
+}
+
+function stopVideoAfterPlay() {
+  let video = document.getElementById("video");
+
+  if (video) {
+    video.addEventListener("ended", function () {
+      video.pause();
+      video.currentTime = 0;
+    });
+  }
+}
+
+window.onload = function () {
+  autoplayVideo();
+  stopVideoAfterPlay();
+  displayFallbackImage();
+};
+
+let video = document.getElementById("video");
+
+function handleUserInteraction() {
+  video.play();
+}
+
+video.addEventListener("pointerdown", handleUserInteraction);
+
+////// Video end

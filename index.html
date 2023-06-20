@@ -9,55 +9,65 @@
     <title>EL Coiffeure & Cosmetics</title>
   </head>
   <body>
-    <div class="background">
-      <header class="container">
-        <div class="headline">
-          <img class="head" src="img/wallpaper7.jpg" alt="" srcset="" />
-          <div class="dropdown-container">
-            <div class="dropdown-toggle click-dropdown touch-dropdown">
-              <p class="icon">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="40"
-                  height="36"
-                  class="bi bi-list"
-                  viewBox="0 0 16 16"
+    <header class="container">
+      <div class="headline">
+        <div id="video-header">
+          <div id="fallback-image">
+            <img class="head2" src="img/wallpaper7.jpg" alt="Fallback Image" />
+          </div>
+
+          <video id="video" autoplay muted playsinline>
+            <source src="img/video.MP4" type="video/mp4" />
+            <source src="img/video.webm" type="video/webm" />
+          </video>
+        </div>
+        <!-- <img class="head" src="img/wallpaper7.jpg" alt="" srcset="" /> -->
+        <div class="dropdown-container">
+          <div class="dropdown-toggle click-dropdown touch-dropdown">
+            <p class="icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="40"
+                height="36"
+                class="bi bi-list"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
+                />
+              </svg>
+            </p>
+          </div>
+          <div class="dropdown-menu">
+            <ul>
+              <li id="cosmo">Kosmetikbehandlungen</li>
+              <li id="makeup">Permanent Makeup</li>
+              <li id="eyes">Schöne Augen</li>
+              <li id="frau">Ladies</li>
+              <li id="man">Gentlemen</li>
+              <li id="kind">Jung Ladies and Jung Gents</li>
+              <li>
+                <a
+                  class="nav"
+                  href="https://www.instagram.com/el_coiffeure_cosmetics/?hl=de"
+                  >Instagram</a
                 >
-                  <path
-                    fill-rule="evenodd"
-                    d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
-                  />
-                </svg>
-              </p>
-            </div>
-            <div class="dropdown-menu">
-              <ul>
-                <li id="cosmo">Kosmetikbehandlungen</li>
-                <li id="makeup">Permanent Makeup</li>
-                <li id="eyes">Schöne Augen</li>
-                <li id="frau">Ladies</li>
-                <li id="man">Gentlemen</li>
-                <li id="kind">Jung Ladies and Jung Gents</li>
-                <li>
-                  <a
-                    class="nav"
-                    href="https://www.instagram.com/el_coiffeure_cosmetics/?hl=de"
-                    >Instagram</a
-                  >
-                </li>
-                <li>
-                  <a
-                    class="nav"
-                    href="https://www.google.com/maps/place/Coiffeure+%26+Cosmetics+by+Emrah+%26+Laura/@53.3649454,10.2039131,15.03z/data=!4m6!3m5!1s0x47b1eb316ea845a5:0x5c91329eb6202630!8m2!3d53.3648714!4d10.2037153!16s%2Fg%2F11q8tj_3n9"
-                    >Adresse</a
-                  >
-                </li>
-                <li><a class="nav" href="tel:017662241170">Contact</a></li>
-              </ul>
-            </div>
+              </li>
+              <li>
+                <a
+                  class="nav"
+                  href="https://www.google.com/maps/place/Coiffeure+%26+Cosmetics+by+Emrah+%26+Laura/@53.3649454,10.2039131,15.03z/data=!4m6!3m5!1s0x47b1eb316ea845a5:0x5c91329eb6202630!8m2!3d53.3648714!4d10.2037153!16s%2Fg%2F11q8tj_3n9"
+                  >Adresse</a
+                >
+              </li>
+              <li><a class="nav" href="tel:017662241170">Contact</a></li>
+            </ul>
           </div>
         </div>
-      </header>
+      </div>
+    </header>
+    <div class="background">
       <div class="price">
         <section id="content" class="liste"></section>
       </div>
