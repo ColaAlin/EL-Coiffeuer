@@ -423,7 +423,7 @@ function currentTime() {
   let dateString = today.toLocaleDateString("de-DE", dateOptions);
 
   document.getElementById("time").textContent =
-    dateString + " " + dayString + " " + hourString + ":" + minutesString; // Display the hour
+    dateString + " " + dayString + " " + hourString + ":" + minutesString;
 
   let nowElement = document.getElementById("now");
 
