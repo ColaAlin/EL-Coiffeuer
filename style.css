@@ -862,12 +862,12 @@ h5 {
 
 @media (max-width: 600px) {
   #video-header {
-    padding-bottom: 75%;
+    padding-bottom: 71%;
   }
 }
 @media (min-width: 600px) {
   #video-header {
-    padding-bottom: 100%;
+    padding-bottom: 70%;
   }
 }
 
