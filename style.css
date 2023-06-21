@@ -160,12 +160,12 @@ h5 {
 .open-closed {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
   margin-left: 30px;
   margin-top: 10px;
   height: auto;
-  width: 225px;
-  padding-left: 15px;
+  width: 220px;
+  padding-left: 10px;
   padding-right: 10px;
   border-radius: 10px;
   -webkit-box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
@@ -175,9 +175,7 @@ h5 {
   background-color: white;
   opacity: 0.8;
 }
-#now {
-  margin-left: 25px;
-}
+
 .wraper {
   display: flex;
   flex-direction: column;
