@@ -175,7 +175,21 @@ h5 {
   background-color: white;
   opacity: 0.8;
 }
-
+.insta-container {
+  background-color: white;
+  opacity: 0.8;
+  height: 440px;
+  width: 1000px;
+  border-radius: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+}
+.insta-photos {
+  padding-top: 35px;
+}
 .wraper {
   display: flex;
   flex-direction: column;
@@ -443,13 +457,15 @@ h5 {
   opacity: 0.8;
 }
 
-#instafeed-container {
-  display: grid;
-  grid-template-columns: 100px 50px 100px;
-  grid-template-rows: 120px 120px 80px;
+/* #instafeed-container {
+  height: auto;
+  width: auto;
+   display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
   column-gap: 10px;
-  row-gap: 15px;
-}
+  row-gap: 150px; 
+} */
 
 #instafeed-container a {
   display: block;
@@ -480,6 +496,11 @@ h5 {
 }
 
 @media (max-width: 767px) {
+  .insta-container {
+    height: auto;
+    width: auto;
+    padding-bottom: 30px;
+  }
   .insta-title {
     margin-left: 15px;
   }
@@ -859,6 +880,16 @@ h5 {
 }
 
 @media (max-width: 600px) {
+  #video-header {
+    padding-bottom: 71%;
+  }
+}
+@media (max-width: 870px) {
+  .insta-container {
+    height: auto;
+    width: auto;
+    padding-bottom: 30px;
+  }
   #video-header {
     padding-bottom: 71%;
   }
