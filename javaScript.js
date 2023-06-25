@@ -477,36 +477,6 @@ let userFeed = new Instafeed({
   template: '<a href="{{link}}" target="_blank"><img src="{{image}}" /></a>',
 });
 userFeed.run();
-// const getUserFeed = async () => {
-//   const userFeed = new Instafeed({
-//     get: "user",
-//     userId: "el_coiffeure_cosmetics",
-//     target: "instafeed-container",
-//     resolution: "low_resolution",
-//     accessToken:
-//       "IGQVJWREN3TlhhNHJIMVctcFlfR1RrVlUxQnZACLUIyWl9fRlkyYkExMnlOT1BvT3g5WlFOWkY0UEZAFVkxIRVUwYlZAKVjBxQkhOdXR6US1PNzlGbXBoYk95M1JpNTJNQzJpWVNHVm05TmlIN3B4ZAzFrdQZDZD",
-//     limit: 12,
-//     template: '<a href="{{link}}" target="_blank"><img src="{{image}}" /></a>',
-//   });
-
-//   return new Promise((resolve, reject) => {
-//     userFeed.run({
-//       success: resolve,
-//       error: reject,
-//     });
-//   });
-// };
-
-// // Usage
-// (async () => {
-//   try {
-//     await getUserFeed();
-//     console.log("Feed loaded successfully");
-//     // Other code to run after the feed is loaded
-//   } catch (error) {
-//     console.error("Error loading feed:", error);
-//   }
-// })();
 
 /// Video start
 
