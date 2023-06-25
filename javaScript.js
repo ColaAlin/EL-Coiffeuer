@@ -387,7 +387,6 @@ function currentTime() {
   let hour = today.getHours();
   let minutes = today.getMinutes();
   let day = today.getDay();
-  let openingDays = [0, 1, 2, 3, 4, 5, 6];
 
   let hourString = ("0" + hour).slice(-2);
   let minutesString = ("0" + minutes).slice(-2);
@@ -427,13 +426,18 @@ function currentTime() {
 
   let nowElement = document.getElementById("now");
 
-  if (
-    (day === 6 && hour >= 9 && hour < 14) ||
-    (day !== 0 &&
-      day !== 1 &&
-      hour >= 9 &&
-      hour < 19 &&
-      openingDays.includes(day))
+  let openingDays = ["Dienstag", "Mittwoch", "Donnerstag", "Freitag"];
+  let closedDays = ["Sonntag", "Montag"];
+  let halfDay = ["Samstag"];
+
+  if (closedDays.includes(dayString)) {
+    nowElement.textContent = "Wir haben geschlossen";
+    nowElement.style.color = "red";
+    nowElement.style.fontWeight = "bold";
+  } else if (
+    (halfDay.includes(dayString) && hour >= 9 && hour < 14) ||
+    (openingDays.includes(dayString) && hour >= 9 && hour < 19) ||
+    (dayString === "Samstag" && hour === 14 && minutes === 0)
   ) {
     nowElement.textContent = "Wir haben geöffnet";
     nowElement.style.color = "rgb(6, 189, 6)";
@@ -444,7 +448,6 @@ function currentTime() {
     nowElement.style.fontWeight = "bold";
   }
 }
-
 currentTime();
 
 const smallImages = document.getElementsByClassName("small");
@@ -474,6 +477,36 @@ let userFeed = new Instafeed({
   template: '<a href="{{link}}" target="_blank"><img src="{{image}}" /></a>',
 });
 userFeed.run();
+// const getUserFeed = async () => {
+//   const userFeed = new Instafeed({
+//     get: "user",
+//     userId: "el_coiffeure_cosmetics",
+//     target: "instafeed-container",
+//     resolution: "low_resolution",
+//     accessToken:
+//       "IGQVJWREN3TlhhNHJIMVctcFlfR1RrVlUxQnZACLUIyWl9fRlkyYkExMnlOT1BvT3g5WlFOWkY0UEZAFVkxIRVUwYlZAKVjBxQkhOdXR6US1PNzlGbXBoYk95M1JpNTJNQzJpWVNHVm05TmlIN3B4ZAzFrdQZDZD",
+//     limit: 12,
+//     template: '<a href="{{link}}" target="_blank"><img src="{{image}}" /></a>',
+//   });
+
+//   return new Promise((resolve, reject) => {
+//     userFeed.run({
+//       success: resolve,
+//       error: reject,
+//     });
+//   });
+// };
+
+// // Usage
+// (async () => {
+//   try {
+//     await getUserFeed();
+//     console.log("Feed loaded successfully");
+//     // Other code to run after the feed is loaded
+//   } catch (error) {
+//     console.error("Error loading feed:", error);
+//   }
+// })();
 
 /// Video start
 
