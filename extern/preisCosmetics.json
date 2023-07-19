@@ -1,21 +1,21 @@
 {
   "text": [
     {
-      "product": "Erstellen Sie ganz einfach ihre individuelle, auf Ihre Haut abgestimmte, Kosmetikbehandlung. Wählen Sie aus zwei Basisbehandlungen und buchen Sie sich ein paar Beauty Extra dazu !"
+      "product": "Erstellen ganz einfach deine individuelle, Kosmetikbehandlung mit unseren Beauty Extras. Ich berate dich gerne, welche Beauty Extras zu deiner Haut passen!"
     }
   ],
   "behandlungEins": [
     {
       "name": "Behandlung 1:",
       "description": "manuelle Reinigung, Peeling, Tonic, gründlich Ausreinigen, HF, Augenbrauen Korrektur, Maske, Augenmassage, Abschlusspflege",
-      "preis": "60 Min.  55.00 €"
+      "preis": "ca. 60 Min.  55.00 €"
     }
   ],
   "behandlungZwei": [
     {
       "name": "Behandlung 2:",
       "description": "manuelle Reinigung, Peeling, Tonic, gründlich Ausreinigen, HF, Augenbrauen Korrektur, Maske, Gesicht-, Hals- und Dekolletemassage, Augenmassage, Abschlusspflege",
-      "preis": "90 Min.  80.00 €"
+      "preis": "ca. 90 Min.  80.00 €"
     }
   ],
   "beautyExtras": [
