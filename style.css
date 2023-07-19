@@ -158,7 +158,7 @@ h5 {
   margin-left: 30px;
   margin-top: 10px;
   height: auto;
-  width: 220px;
+  width: 240px;
   padding-left: 10px;
   padding-right: 10px;
   border-radius: 10px;
@@ -428,6 +428,9 @@ h5 {
 .icon {
   display: flex;
   align-items: center;
+  background-color: goldenrod;
+  border-radius: 7px;
+  opacity: 0.6;
 }
 .insta-title {
   margin-left: 30px;
@@ -442,16 +445,6 @@ h5 {
   background-color: white;
   opacity: 0.8;
 }
-
-/* #instafeed-container {
-  height: auto;
-  width: auto;
-   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr;
-  column-gap: 10px;
-  row-gap: 150px; 
-} */
 
 #instafeed-container a {
   display: block;
@@ -471,6 +464,18 @@ h5 {
   .background {
     background-attachment: scroll;
     background-size: auto 100%;
+  }
+}
+@media (min-width: 1024px) {
+  .video {
+    width: 100%;
+    height: 100px;
+  }
+}
+@media (max-width: 1440px) {
+  .video {
+    width: 100%;
+    height: 100px;
   }
 }
 @media (max-width: 9999px) {
@@ -529,6 +534,7 @@ h5 {
     width: 100%;
     height: 100%;
   }
+
   #instafeed-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -656,6 +662,10 @@ h5 {
   .irene {
     padding-top: 0;
     margin-top: 60px;
+  }
+  .video {
+    width: 100%;
+    height: 600px;
   }
 }
 
@@ -817,6 +827,7 @@ h5 {
     margin: 0;
   }
 }
+
 .small {
   transition: transform 0.3s;
   cursor: pointer;

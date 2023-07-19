@@ -504,20 +504,20 @@ function displayFallbackImage() {
   }
 }
 
-function stopVideoAfterPlay() {
-  let video = document.getElementById("video");
+// function stopVideoAfterPlay() {
+//   let video = document.getElementById("video");
 
-  if (video) {
-    video.addEventListener("ended", function () {
-      video.pause();
-      video.currentTime = 0;
-    });
-  }
-}
+//   if (video) {
+//     video.addEventListener("ended", function handleEnded() {
+//       video.pause();
+//       video.currentTime = 0;
+//     });
+//   }
+// }
 
 window.onload = function () {
   autoplayVideo();
-  stopVideoAfterPlay();
+  // stopVideoAfterPlay();
   displayFallbackImage();
 };
 
